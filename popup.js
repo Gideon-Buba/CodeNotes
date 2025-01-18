@@ -16,3 +16,21 @@ document.getElementById("save").addEventListener("click", function () {
     alert("Please enter both code and note.");
   }
 });
+
+document.getElementById("view").addEventListener("click", function () {
+  chrome.storage.sync.get(["notes"], function (result) {
+    const notes = result.notes || [];
+    const notesList = document.getElementById("notes-list");
+    notesList.innerHTML = "";
+
+    notes.forEach((note, index) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `<strong>Note ${index + 1}:</strong><br>${
+        note.code
+      }<br><br>${note.note}`;
+      notesList.appendChild(listItem);
+    });
+
+    document.getElementById("notes-container").style.display = "block";
+  });
+});

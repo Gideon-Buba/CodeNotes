@@ -38,8 +38,26 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 button:hover {
   background-color: #45a049;
+}
+
+#notes-container {
+  margin-top: 20px;
+}
+
+#notes-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#notes-list li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
